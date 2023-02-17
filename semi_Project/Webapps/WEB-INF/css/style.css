@@ -1,0 +1,24 @@
+
+.weather{
+    margin: auto;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 100px;
+}
+.Curricon, .CurrTemp{
+    display: inline-block;
+    font-size: 1.9rem;
+    text-align: center;
+}
+.Curricon{
+    margin-right: 2px;
+}
+
+.City{
+    font-size: 1rem;
+    
+    text-align: center;
+  
+}
