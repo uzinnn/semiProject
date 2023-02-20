@@ -2,6 +2,7 @@ package song.vo;
 
 public class SongVo {
 	
+	private int id;
 	private String title;
 	private String artistName;
 	private String url;
@@ -9,7 +10,19 @@ public class SongVo {
 	
 	
 	
-
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public SongVo(int id, String title, String artistName, String album) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.artistName = artistName;
+		this.album = album;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -38,6 +51,7 @@ public class SongVo {
 	public String toString() {
 		return "SongVo [title=" + title + ", artistName=" + artistName + ", url=" + url + ", album=" + album + "]";
 	}
+	
 	
 	
 
