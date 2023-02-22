@@ -8,11 +8,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import song.vo.SongVo;
+import semi.song.vo.SongVo;
 
 public class MelonCrawling {
 	
-	static void Crawling(ArrayList<SongVo> vo) {
+	public static void Crawling(ArrayList<SongVo> SL) {
 		String url = "https://www.melon.com/chart/index.htm";
 		Document doc = null;
 		Elements tmp;
@@ -37,7 +37,7 @@ public class MelonCrawling {
 			tmp = element.select("div.ellipsis.rank01");
 			name_temp = tmp.get(i).text();
 			
-			tmp = element.select("div.ellipsis.rank02");
+			tmp = element.select("div.ellipsis.rank02").select("span");
 			singer_temp = tmp.get(i).text();
 
 			tmp = element.select("div.ellipsis.rank03");
@@ -46,12 +46,13 @@ public class MelonCrawling {
 			tmp = element.select("span.rank");
 			id = Integer.parseInt((tmp.get(i).text()));
 			
-			vo.add(new SongVo(id, name_temp,singer_temp,album_temp));
 			
-		}
+				SL.add(new SongVo(id, name_temp,singer_temp,album_temp));
+				System.out.println(SL);
 			
-		
-		
+			
+			}
+	
 		
 		//50~10위
 		 element = doc.select("div#tb_list").select("tr.lst100");
@@ -60,7 +61,7 @@ public class MelonCrawling {
 				tmp = element.select("div.ellipsis.rank01");
 				name_temp = tmp.get(i).text();
 				
-				tmp = element.select("div.ellipsis.rank02");
+				tmp = element.select("div.ellipsis.rank02").select("span");
 				singer_temp = tmp.get(i).text();
 
 				tmp = element.select("div.ellipsis.rank03");
@@ -69,7 +70,7 @@ public class MelonCrawling {
 				tmp = element.select("span.rank");
 				id = Integer.parseInt((tmp.get(i).text()));
 				
-				vo.add(new SongVo(id, name_temp,singer_temp,album_temp));
+				SL.add(new SongVo(id, name_temp,singer_temp,album_temp));
 				
 			}
 		 

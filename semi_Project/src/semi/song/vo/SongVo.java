@@ -1,11 +1,10 @@
-package song.vo;
+package semi.song.vo;
 
 public class SongVo {
 	
 	private int id;
 	private String title;
 	private String artistName;
-	private String url;
 	private String album;
 	
 	
@@ -35,12 +34,7 @@ public class SongVo {
 	public void setArtistName(String artistName) {
 		this.artistName = artistName;
 	}
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
+	
 	public String getAlbum() {
 		return album;
 	}
@@ -49,7 +43,7 @@ public class SongVo {
 	}
 	@Override
 	public String toString() {
-		return "SongVo [title=" + title + ", artistName=" + artistName + ", url=" + url + ", album=" + album + "]";
+		return "SongVo [title=" + title + ", artistName=" + artistName + ",  album=" + album + "]";
 	}
 	
 	
